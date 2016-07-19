@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by NareshL on 18-07-2016.
  */
@@ -44,6 +46,14 @@ public class LoginController {
     int count(){
         int count = usrRepo.findUser("Naresh");
         return count;
+    }
+
+    @RequestMapping(value = "/menu")
+    public ModelAndView getmenu(HttpServletRequest request){
+        String basePath="classpath:/resources";
+        ModelAndView menuPage=new ModelAndView("menu");
+        menuPage.addObject("basePath",basePath);
+        return menuPage;
     }
 
 }
