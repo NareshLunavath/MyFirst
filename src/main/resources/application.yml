@@ -1,0 +1,5 @@
+# DB connection
+spring.data.mongodb:
+  database: users
+  host: localhost
+  port: 27017

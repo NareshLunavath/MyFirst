@@ -3,6 +3,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -16,6 +17,7 @@ import java.text.ParseException;
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan(basePackages = "com.adsIn")
+@EnableMongoRepositories({"com.adsIn.controller.data.repository"})
 public class AdsInApplication {
     public static void main(String[] args) throws ParseException
     {

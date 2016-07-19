@@ -1,6 +1,9 @@
 package com.adsIn.controller;
 
 
+import com.adsIn.controller.data.domain.User;
+import com.adsIn.controller.data.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,11 +16,34 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/user")
 public class LoginController {
 
-    @RequestMapping(value = "/login")
+    @Autowired
+    private UserRepository usrRepo;
+
+    @RequestMapping(value = "/find")
     public
-    ModelAndView getLogin(){
+    ModelAndView find(){
         ModelAndView loginPage = new ModelAndView();
         loginPage.setViewName("login");
+        User user = usrRepo.findByName("Naresh");
+        loginPage.addObject("user", user);
         return loginPage;
     }
+
+    @RequestMapping(value = "/post")
+    public
+    String post(){
+        User user = new User();
+        user.setName("Naresh");
+        user.setPassword("Naresh-Pass");
+        usrRepo.save(user);
+        return "SUCCESS";
+    }
+
+    @RequestMapping(value = "/count")
+    public
+    int count(){
+        int count = usrRepo.findUser("Naresh");
+        return count;
+    }
+
 }
