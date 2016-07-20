@@ -1,8 +1,8 @@
 package com.adsIn.controller;
 
 
-import com.adsIn.controller.data.domain.User;
-import com.adsIn.controller.data.repository.UserRepository;
+import com.adsIn.data.domain.User;
+import com.adsIn.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

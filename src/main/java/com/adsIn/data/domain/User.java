@@ -1,7 +1,6 @@
-package com.adsIn.controller.data.domain;
+package com.adsIn.data.domain;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")

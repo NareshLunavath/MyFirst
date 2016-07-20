@@ -17,7 +17,7 @@ import java.text.ParseException;
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan(basePackages = "com.adsIn")
-@EnableMongoRepositories({"com.adsIn.controller.data.repository"})
+@EnableMongoRepositories({"com.adsIn.data.repository"})
 public class AdsInApplication {
     public static void main(String[] args) throws ParseException
     {

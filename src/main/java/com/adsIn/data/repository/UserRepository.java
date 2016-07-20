@@ -1,9 +1,6 @@
-package com.adsIn.controller.data.repository;
+package com.adsIn.data.repository;
 
-import java.util.Date;
-import java.util.List;
-
-import com.adsIn.controller.data.domain.User;
+import com.adsIn.data.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
